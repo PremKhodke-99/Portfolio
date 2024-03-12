@@ -1,11 +1,27 @@
-import './App.css'
+import Navbar from './Components/Navbar'
+import { About, ContactMe, Footer, Hero, Projects } from './Sections'
 
 function App() {
 
   return (
-    <>
-      <h1 className='text-xl font-bold text-green-700'>Hello Portfolio</h1>
-    </>
+    <main className='relative'>
+      <Navbar />
+      <section>
+        <Hero />
+      </section>
+      <section>
+        <About />
+      </section>
+      <section>
+        <Projects />
+      </section>
+      <section>
+        <ContactMe />
+      </section>
+      <section>
+        <Footer />
+      </section>
+    </main>
   )
 }
 
