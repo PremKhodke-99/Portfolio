@@ -1,17 +1,29 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
+
+  useGSAP(() => {
+    gsap.from('#heading', {
+      y: 200,
+      duration: 1,
+      opacity: 0
+    })
+  },[])
+
   return (
     <section className="lg:py-20 lg:px-14 md:py-16 py-12 h-screen lg:p-8 md:p-6 p-4 bg-black text-white" id="home">
       <div className="h-full grid grid-cols-1 sm:grid-cols-12">
-        <div className="col-span-8 place-self-center text-center sm:text-left sm:justify-self-start">
+        <div className="col-span-8 place-self-center text-center sm:text-left sm:justify-self-start" id="heading">
           <h1 className="lg:text-7xl md:text-5xl text-4xl font-extrabold lg:leading-normal md:leading-normal leading-snug">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-800 to-yellow-600">
-              Hello, I&apos;m{" "}
+            <span className="lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-pink-800 to-yellow-600">
+              Hey there!, I&apos;m{" "}
             </span>
             <br />
             <TypeAnimation
@@ -34,19 +46,14 @@ const Hero = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-gray-300 font-semibold leading-8 hidden md:hidden sm:block">
-            A Frontend focused Web Developer building the Frontend of Websites
-            and Web <br /> Applications that leads to the success of the overall
-            product
-          </p>
-          <p className="text-gray-300 font-semibold sm:hidden md:block block my-6 leading-relaxed">
+          <p className="text-gray-300 font-semibold my-6 leading-relaxed">
             A Frontend focused Web Developer building the Frontend of Websites
             and Web Applications
           </p>
           <div className="mt-4 sm:mt-8">
-            <button className="w-full sm:w-fit bg-gradient-to-r from-pink-600 to-yellow-600 px-6 py-3 mr-4 font-medium tracking-wide rounded-full">
+            <Link href={'#contact'} className="inline-block w-full sm:w-fit bg-gradient-to-r from-pink-600 to-yellow-600 px-6 py-3 mr-4 font-medium tracking-wide rounded-full" >
               Hire Me
-            </button>
+            </Link>
             <button className="w-full sm:w-fit bg-gradient-to-r from-pink-600 to-yellow-600 font-medium px-1 py-1 tracking-wide rounded-full mt-3">
               <span className="block px-5 py-2 bg-black rounded-full">
                 Download CV
