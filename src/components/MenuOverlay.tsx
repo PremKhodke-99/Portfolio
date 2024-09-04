@@ -8,7 +8,7 @@ interface ChildComponentProps {
 
 const MenuOverlay: React.FC<ChildComponentProps> = ({ setIsOpen }) => {
   return (
-    <ul className="fixed top-12 w-full z-10 flex flex-col py-4 gap-3 items-center bg-violet-700 text-white">
+    <ul className="fixed top-12 w-full z-10 flex flex-col py-4 gap-3 items-center font-medium bg-yellow-300 text-black">
       {navbarItem.map((item, idx) => (
         <li key={idx}>
           <Link
