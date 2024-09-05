@@ -95,3 +95,34 @@ export const navbarItem = [
     href: "#contact",
   },
 ];
+
+export const projects = [
+  {
+    id: 1,
+    title: "Q-Kart",
+    description: "",
+    image: "/assets/projects/QKart.png",
+    href: "https://qkart-frontend-gilt.vercel.app/",
+  },
+  {
+    id: 2,
+    title: "Q-Tify",
+    description: "",
+    image: "/assets/projects/QTify.png",
+    href: "https://l-square-qtify-omega.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Law Firm",
+    description: "",
+    image: "/assets/projects/LawFirm.png",
+    href: "https://law-firm-landing-page-delta.vercel.app/",
+  },
+  {
+    id: 4,
+    title: "Q-Trip",
+    description: "",
+    image: "/assets/projects/Tour.png",
+    href: "https://front-end-qtrip-dynamic.netlify.app/",
+  },
+];
