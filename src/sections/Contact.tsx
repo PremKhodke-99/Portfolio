@@ -32,8 +32,8 @@ const Contact = () => {
         <div className="col-span-6 text-center lg:place-self-start md:place-self-start place-self-center sm:text-left sm:justify-self-start">
           <h3 className="lg:text-2xl text-lg font-bold">Lets Connect</h3>
           <p className="text-sm leading-5 lg:w-[60%] text-slate-400 mt-2">
-            I'm currently looking for new opportunities, my inbox is always
-            open. Whether you have a question or just want to say hi, I'll try
+            I&apos;m currently looking for new opportunities, my inbox is always
+            open. Whether you have a question or just want to say hi, I&apos;ll try
             my best to get back to you!
           </p>
           <div className="flex gap-3 lg:mt-4 mt-2 lg:justify-start md:justify-start justify-center">
