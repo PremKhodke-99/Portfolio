@@ -14,7 +14,7 @@ interface ProjectType {
   href: string;
 }
 
-const Card = ({ title, description, image, href }: ProjectType) => {
+const Card: React.FC<ProjectType> = ({ title, description, image, href }) => {
   const [isHover, setIsHover] = useState(false);
 
   useGSAP(() => {
