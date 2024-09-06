@@ -77,6 +77,29 @@ export const logo = [
   },
 ];
 
+export const social = [
+  {
+    name: "LinkedIn",
+    icon: "/assets/logos/linkedin.png",
+    href: "https://www.linkedin.com/in/premkhodke/"
+  },
+  {
+    name: "GitHub",
+    icon: "/assets/logos/github.png",
+    href: "https://github.com/PremKhodke-99"
+  },
+  {
+    name: "X",
+    icon: "/assets/logos/twitter.png",
+    href: "https://x.com/its_marvelman"
+  },
+  {
+    name: "Gmail",
+    icon: "/assets/logos/email.png",
+    href: "mailto:premkhodke.99@gmail.com"
+  }
+]
+
 export const navbarItem = [
   {
     title: "Home",
