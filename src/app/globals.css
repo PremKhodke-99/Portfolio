@@ -18,6 +18,11 @@
   }
 }
 
+*::selection {
+  background-color: #fde047;
+  color: #000;
+}
+
 body::-webkit-scrollbar {
   display: block;
   width: 4px;
