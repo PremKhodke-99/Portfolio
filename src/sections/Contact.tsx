@@ -5,9 +5,13 @@ import { social } from "../../constants";
 import Image from "next/image";
 import Link from "next/link";
 import { WavyBackground } from "@/components/ui/wavy-background";
+import { MessageType } from "@/custom";
+import { sendMessage } from "@/actions";
+import { enqueueSnackbar } from "notistack";
 
 const Contact = () => {
-  const [message, setMessage] = useState({
+  const [isEmailSubmitted, setIsEmailSubmitted] = useState<Boolean>(false);
+  const [message, setMessage] = useState<MessageType>({
     email: "",
     subject: "",
     message: "",
@@ -22,6 +26,30 @@ const Contact = () => {
       [name]: value,
     });
   };
+
+  const handleSendBtnValid = (): boolean => {
+    return Object.keys(message).every(
+      (key) => message[key as keyof MessageType].trim() !== ""
+    );
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const result = await sendMessage(message);
+    if (result?.success) {
+      setMessage({
+        email: "",
+        subject: "",
+        message: "",
+      });
+      enqueueSnackbar(result.message, { variant: "success" });
+    } else {
+      enqueueSnackbar(result?.message, { variant: "error" });
+    }
+  };
+
+  // console.log(message);
 
   return (
     <section
@@ -53,7 +81,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="col-span-6">
-            <form action="" className="">
+            <form onSubmit={handleSubmit}>
               <label
                 htmlFor="email"
                 className="block text-xs font-medium mt-4 mb-2"
@@ -100,7 +128,8 @@ const Contact = () => {
               ></textarea>
               <button
                 type="submit"
-                className="block w-full p-2 mt-4 font-medium bg-emerald-700 hover:bg-emerald-600 duration-500 rounded-md"
+                disabled={!handleSendBtnValid()}
+                className="block w-full p-2 mt-4 font-medium bg-emerald-700 hover:bg-emerald-600 duration-500 rounded-md disabled:bg-gray-300 disabled:cursor-not-allowed"
               >
                 Send Message
               </button>
