@@ -21,8 +21,8 @@ const About: React.FC = () => {
     timeline.from("#about #image", {
       opacity: 0,
       delay: 1,
-      duration: 1
-    })
+      duration: 1,
+    });
 
     timeline.from("#about #aboutme", {
       y: "30px",
@@ -42,12 +42,11 @@ const About: React.FC = () => {
       duration: 0.5,
     });
 
-    timeline.from("#about #svgs",{
+    timeline.from("#svgs", {
       y: "50px",
       opacity: 0,
-      duration: 0.7,
-      stagger: 0.3
-    }, "skillpic")
+      duration: 0.5,
+    });
   }, []);
 
   return (
@@ -83,12 +82,14 @@ const About: React.FC = () => {
           >
             Skills
           </h1>
-          <div className="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-3 place-items-center gap-3">
+          <div
+            className="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-3 place-items-center gap-3"
+            id="svgs"
+          >
             {logo.map((log, idx) => (
               <div
                 key={idx}
                 className="p-2 bg-yellow-50 h-16 w-16 flex justify-center items-center rounded-lg hover:scale-110 hover:border-emerald-700 border duration-500"
-                id="svgs"
               >
                 <Image src={log.icon} alt={log.name} height={40} width={40} />
               </div>
