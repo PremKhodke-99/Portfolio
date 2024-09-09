@@ -15,7 +15,6 @@ const Projects: React.FC = () => {
         scroller: "body",
         start: "top 50%",
         end: "top 0%",
-        markers: true,
         scrub: 2,
       },
     });

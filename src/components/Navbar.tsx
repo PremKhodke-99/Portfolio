@@ -27,7 +27,6 @@ const Navbar: React.FC = () => {
         scroller: "body",
         start: "top -100%",
         end: "top -105%",
-        markers: true,
         scrub: 1
       },
     });
