@@ -8,6 +8,7 @@ import Projects from "@/sections/Projects";
 import { SnackbarProvider } from "notistack";
 
 export default function Home() {
+
   return (
     <SnackbarProvider
       anchorOrigin={{
