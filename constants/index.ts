@@ -126,6 +126,7 @@ export const projects = [
     description: "",
     image: "/assets/projects/QKart.png",
     href: "https://qkart-frontend-gilt.vercel.app/",
+    classname: "top-left",
   },
   {
     id: 2,
@@ -133,6 +134,7 @@ export const projects = [
     description: "",
     image: "/assets/projects/QTify.png",
     href: "https://l-square-qtify-omega.vercel.app/",
+    classname: "top-right"
   },
   {
     id: 3,
@@ -140,6 +142,7 @@ export const projects = [
     description: "",
     image: "/assets/projects/LawFirm.png",
     href: "https://law-firm-landing-page-delta.vercel.app/",
+    classname: "bottom-left"
   },
   {
     id: 4,
@@ -147,5 +150,6 @@ export const projects = [
     description: "",
     image: "/assets/projects/Tour.png",
     href: "https://front-end-qtrip-dynamic.netlify.app/",
+    classname: "bottom-right"
   },
 ];
