@@ -1,9 +1,9 @@
 "use server";
 
-import { MessageType } from "@/custom";
 import { Resend } from "resend";
 import MailTemplate from "../../template/MailTemplate";
 import { ReactElement } from "react";
+import { MessageType } from "../../new-types";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const toEmail: string = process.env.EMAIL!;
