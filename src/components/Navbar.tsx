@@ -2,12 +2,14 @@
 
 import { navbarItem } from "../../constants";
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
 import MenuOverlay from "./MenuOverlay";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
+  gsap.registerPlugin(ScrollTrigger);
   const [isOpen, setIsOpen] = useState(false);
 
   useGSAP(() => {
@@ -17,6 +19,23 @@ const Navbar = () => {
       delay: 1,
       duration: 0.7,
       stagger: 0.2,
+    });
+
+    var timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#nav",
+        scroller: "body",
+        start: "top -100%",
+        end: "top -105%",
+        markers: true,
+        scrub: 1
+      },
+    });
+
+    timeline.to("#nav", {
+      height: "48px",
+      paddingTop: "16px",
+      paddingBottom: "16px",
     });
   }, []);
 
@@ -78,7 +97,7 @@ const Navbar = () => {
             </button>
           )}
         </div>
-        <div className="hidden md:block md:w-auto">
+        <div className="hidden md:block md:w-auto" id="tabs">
           <div className="flex gap-20">
             {navbarItem.map((item, idx) => (
               <Link
