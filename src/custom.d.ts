@@ -9,8 +9,4 @@ declare module "*.svg" {
 //   const src: string;
 //   export default src;
 // }
-export interface MessageType {
-  email: string;
-  subject: string;
-  message: string;
-}
+
