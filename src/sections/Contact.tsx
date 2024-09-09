@@ -5,12 +5,11 @@ import { social } from "../../constants";
 import Image from "next/image";
 import Link from "next/link";
 import { WavyBackground } from "@/components/ui/wavy-background";
-import { MessageType } from "@/custom";
 import { sendMessage } from "@/actions";
 import { enqueueSnackbar } from "notistack";
+import { MessageType } from "../../new-types";
 
-const Contact = () => {
-  const [isEmailSubmitted, setIsEmailSubmitted] = useState<Boolean>(false);
+const Contact: React.FC = () => {
   const [message, setMessage] = useState<MessageType>({
     email: "",
     subject: "",
@@ -49,8 +48,6 @@ const Contact = () => {
     }
   };
 
-  // console.log(message);
-
   return (
     <section
       id="contact"
@@ -72,6 +69,7 @@ const Contact = () => {
               {social.map((soc, idx) => (
                 <Link
                   href={soc.href}
+                  target="_blank"
                   className="bg-white flex justify-center items-center h-7 w-7 rounded-full"
                   key={idx}
                 >

@@ -8,15 +8,21 @@ import Link from "next/link";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   useGSAP(() => {
     gsap.from("#heading", {
       y: 200,
       duration: 1,
       opacity: 0,
     });
-  }, []);
 
+    gsap.from("#heroimg", {
+      y: -200,
+      duration: 1,
+      opacity: 0,
+    });
+  }, []);
+  
   return (
     <BackgroundBeamsWithCollision>
       <section
@@ -76,7 +82,7 @@ const Hero = () => {
               </Link>
             </div>
           </div>
-          <div className="col-span-4 place-self-center lg:mt-0">
+          <div className="col-span-4 place-self-center lg:mt-0" id="heroimg">
             <div className="rounded-full bg-slate-950 w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] relative overflow-hidden">
               <Image
                 src="/assets/hibernate.png"
