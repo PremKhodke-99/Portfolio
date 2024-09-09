@@ -5,16 +5,16 @@ import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import Arrow from '../../public/assets/arrow-right-up-line.svg'
+import Arrow from "../../public/assets/arrow-right-up-line.svg";
+import { ProjectType } from "../../new-types";
 
-interface ProjectType {
-  title: string;
-  description: string;
-  image: string;
-  href: string;
-}
-
-const Card: React.FC<ProjectType> = ({ title, description, image, href }) => {
+const Card: React.FC<ProjectType> = ({
+  title,
+  description,
+  image,
+  href,
+  classname,
+}) => {
   const [isHover, setIsHover] = useState(false);
 
   useGSAP(() => {
@@ -28,7 +28,7 @@ const Card: React.FC<ProjectType> = ({ title, description, image, href }) => {
 
   return (
     <div
-      className={`col-span-6 place-self-center w-full lg:h-[300px] h-[225px] box-shadow rounded-xl relative overflow-hidden bg-black`}
+      className={`col-span-6 place-self-center w-full lg:h-[300px] h-[225px] box-shadow rounded-xl relative overflow-hidden bg-black ${classname}`}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
@@ -46,7 +46,13 @@ const Card: React.FC<ProjectType> = ({ title, description, image, href }) => {
           target="_blank"
           className="text-white font-light mt-16 border-[0.5px] border-gray-300 px-4 py-2 rounded-full hover:text-black hover:bg-emerald-50 duration-300 flex gap-2"
         >
-          <Image src={Arrow} alt="arrow" width={20} height={20} className="text-white"/>
+          <Image
+            src={Arrow}
+            alt="arrow"
+            width={20}
+            height={20}
+            className="text-white"
+          />
           <p>Link</p>
         </Link>
       </div>
