@@ -49,6 +49,8 @@ const Hero: React.FC = () => {
                   1000,
                   "Full Stack Developer",
                   1000,
+                  "Freelancer",
+                  1000,
                   () => {
                     console.log("Sequence completed");
                   },
