@@ -73,9 +73,9 @@ const Hero: React.FC = () => {
                 Hire Me
               </Link>
               <Link
-                href={"/cv/Prem_Khodke-CV_u.pdf"}
+                href={"/cv/PREM_KHODKE.pdf"}
                 target="_blank"
-                download={"Prem_Khodke-CV"}
+                download={"Prem Khodke, Full Stack Web Developer CV"}
                 className="inline-block w-full sm:w-fit bg-gradient-to-r from-pink-600 to-yellow-600 font-medium px-1 py-1 tracking-wide rounded-full mt-3"
               >
                 <span className="block px-5 py-2 bg-black rounded-full">
